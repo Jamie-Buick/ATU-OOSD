@@ -15,25 +15,17 @@ public class Date {
 	
 	
 	
-	
-	
 	public static void main(String[] args) {
 	
 		int date = 9,  year = 2025;
 		String day = "Saturday", month = "February";
-		
-	
 	
 		printAmerican(date, year, day, month);
 		System.out.println("");
 		printEuropean(date, year, day, month);
 
 	}
-	
-	
-	
-
-	
+		
 	
 }
 
