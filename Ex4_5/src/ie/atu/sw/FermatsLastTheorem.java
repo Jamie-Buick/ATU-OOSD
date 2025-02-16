@@ -31,9 +31,9 @@ public class FermatsLastTheorem {
 		{
 			System.out.println("Fermat’s theorem only applies for n > 2.");
 		}
-
 		
 	}
+	
 	
 	public static int raiseToPow(int x, int y) {
 		int z = (int) Math.pow(x, y);
@@ -41,10 +41,10 @@ public class FermatsLastTheorem {
 		return z;
 	}
 	
+	
 	public static void main(String[] args) {
 		
 		checkFermat(1,1,2,3);
-		
-		
+	
 	}
 }
