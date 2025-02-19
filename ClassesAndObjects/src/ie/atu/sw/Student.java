@@ -2,33 +2,60 @@ package ie.atu.sw;
 
 import java.time.LocalDate;
 
-
 public class Student {
-/*
- * Define some state for the class Student. These are
- * all **instance variables**
- */
-	
-	public long sid;
-	public String name = "Undefined";
-	public LocalDate dob;				//LocalDate seems to be more up to date than util.
-	public boolean registered = false;
-	
+	/*
+	 * Define some state for the class Student. These are all **instance variables**
+	 */
+
+	private long sid;
+	private String name = "Undefined";
+	private LocalDate dob; // LocalDate seems to be more up to date than util.
+	private boolean registered = false;
+
 	public Student() {
 		System.out.println("The ID of Student the Object is " + this);
 	}
-	
-	// Add some methods - things a class can **do** (behaviours)
-	public void register() {
-		this.registered = true;
+
+	public long getSid() {
+		return sid;
 	}
-	
-	public void study() {
+
+	public void setSid(long sid) {
+		this.sid = sid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public LocalDate getDob() {
+		return dob;
+	}
+
+	public void setDob(LocalDate dob) {
+		this.dob = dob;
+	}
+
+	public boolean isRegistered() {
+		return registered;
+	}
+
+	public void setRegistered(boolean reg) {
+		this.registered = reg;
+	}
+
+	// Add some methods - things a class can **do** (behaviours)
+
+	protected void study() {
 		System.out.println("Studying...");
 	}
-	
-	public void execute() {
+
+	protected void execute() {
 		System.out.println("Execute");
 	}
-	
+
 }

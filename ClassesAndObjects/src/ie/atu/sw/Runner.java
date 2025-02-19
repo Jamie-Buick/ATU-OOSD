@@ -13,20 +13,20 @@ public class Runner {
 		System.out.println("Student from Runner: " + s);
 		
 		// Use the dot notation to access features
-		s.sid = 99999;
-		s.name = "Jamie Buick";
-		s.dob = LocalDate.now();
+		s.setSid(9999);
+		s.setName("Jamie Buick"); 
+		s.setDob(LocalDate.now());
 		
 		
 		// I can also use the dot notation to invoke methods
-		s.register();
+		s.setRegistered(true);
 		s.study();
 		s.execute();
 		
 		// Access the state
-		System.out.println(s.sid);
-		System.out.println(s.name);
-		System.out.println(s.dob);
-		System.out.println(s.registered);
+		System.out.println(s.getSid());
+		System.out.println(s.getName());
+		System.out.println(s.getDob());
+		System.out.println(s.isRegistered());
 	}
 }
