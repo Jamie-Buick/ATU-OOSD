@@ -50,12 +50,19 @@ public class Student {
 
 	// Add some methods - things a class can **do** (behaviours)
 
-	protected void study() {
-		System.out.println("Studying...");
+	protected String study(double hours, int level) {
+		double total = hours * level;
+		String message = "Studying.. " + total;
+
+		return message;
 	}
 
-	protected void execute() {
-		System.out.println("Execute");
+	protected boolean execute(String command) {
+		System.out.println("Execute " + command);
+		
+		return command.endsWith("!");
+		
+		
 	}
 
 }

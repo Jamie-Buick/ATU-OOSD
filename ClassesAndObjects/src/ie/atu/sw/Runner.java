@@ -20,8 +20,12 @@ public class Runner {
 		
 		// I can also use the dot notation to invoke methods
 		s.setRegistered(true);
-		s.study();
-		s.execute();
+		
+		String msg  = s.study(2.25d, 8);
+		System.out.println(msg);
+		
+		boolean res = s.execute("Study please...!");
+		System.out.println("Has Prefix: " + res);
 		
 		// Access the state
 		System.out.println(s.getSid());
