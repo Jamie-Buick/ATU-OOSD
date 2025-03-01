@@ -17,7 +17,7 @@ public class Homework {
 	// Define some state for the class. Stuff that the class knows...
 	private String subject;
 	private LocalDate date;
-	private double done = 0.99d;
+	private boolean done = false;
 	
 	
 	public Homework(String sub, LocalDate due) {   // constructor 
@@ -34,7 +34,7 @@ public class Homework {
 	}
 	
 	public void setComplete() {
-		this.done = 0.01d;
+		this.done = true;
 		//System.out.println(this.done);
 	}
 }
