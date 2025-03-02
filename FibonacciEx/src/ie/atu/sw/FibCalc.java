@@ -7,17 +7,17 @@ import java.util.Scanner;
 // Return the answer to the user
 
 
-public class FactorialCalc {
+public class FibCalc {
 	
 	private static Scanner scanner;
 	
 	 
-	public FactorialCalc() {
+	public FibCalc() {
 	
 		scanner = new Scanner(System.in);
 		
 		int nValue = userInput();
-		int result = factorial(nValue);
+		int result = fibonacci(nValue);
 		
 		System.out.println(result);
 	}
@@ -25,7 +25,7 @@ public class FactorialCalc {
 	
 	public static int userInput() {
 		
-		System.out.println("Enter a n value that you would like the factorial of>");
+		System.out.println("Enter a n value for the Fibonacci sequence>");
 		String input = scanner.next();
 		int n = Integer.parseInt(input);
 		
@@ -33,22 +33,24 @@ public class FactorialCalc {
 	}
 	
 	
-	public static int factorial(int n) {		//4
-		if(n == 0) 
+	public static int fibonacci(int n) {		//4
+		if(n == 0)
+		{
+			return 0;
+		}
+		else if(n == 1) 
 		{
 			return 1;
 		}
 		else
 		{
-			int recurse = factorial(n-1);		
-			int result = n * recurse;	
-			//System.out.println(result);
-			return result;
+		
+			return  fibonacci(n-1) + fibonacci(n-2);
 		}
 	}
 	
 	
 	public static void main(String[] args) {
-		new FactorialCalc();
+		new FibCalc();
 	}
 }
