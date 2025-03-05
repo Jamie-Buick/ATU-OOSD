@@ -39,22 +39,35 @@ public class Recurse {
 		}
 	}
 	
+
+	
 	
 	public static void main(String[] args) {
-		String testString = "Jamie Buick";
+		String testString = "JamieBuick";
 		
 		System.out.println("First Char: " + first(testString));
 		System.out.println("Rest of String: " + rest(testString));
 		System.out.println("Length: " + length(testString));
 		
+		System.out.println("----------------------------------------------------");
+		System.out.println("Non-Recursive");
+		System.out.println("----------------------------------------------------");
+		System.out.println("");
+		
 		System.out.println("Each char printed on new line: ");
 		printString(testString);
+		System.out.println("");
 		
 		System.out.println("Each char printed on new line backwards: ");
 		printBackward(testString);
+		System.out.println("");
 		
 		System.out.println("Each char printed on same line backwards: ");
 		reverseString(testString);
+		System.out.println("");
+		
+
+		
 		
 	}
 
