@@ -13,18 +13,19 @@ public class PrintMultiples {
 	
 	
 	
-	public static void printMultiplesFor(int n) {
+	
+	public static void printMultiplesFor(int n, int max) {
 		
-		for(int i = 1; i <= 6; i++) {
+		for(int i = 1; i <= max; i++) {
 			System.out.print(n*i + "    ");
 		}
 		System.out.println(" ");
 	}
 	
-	public static void printMultTable() {
+	public static void printMultTable(int max) {
 		int i = 1;
-		while(i <= 6) {
-			printMultiplesFor(i);
+		while(i <= max) {
+			printMultiplesFor(i, i); // This makes it 1x1, 2x2 etc...
 			
 			i = i + 1;
 			
@@ -32,14 +33,13 @@ public class PrintMultiples {
 	}
 	
 	
-
 	
 	
 	public static void main(String[] args) {
 		//printMultiplesWhile(5);
 		//System.out.println(" ");
 		//printMultiplesFor(5);
-		printMultTable();
+		printMultTable(7);
 		
 	}
 }
