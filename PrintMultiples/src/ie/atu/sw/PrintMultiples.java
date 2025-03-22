@@ -25,7 +25,7 @@ public class PrintMultiples {
 	public static void printMultTable(int max) {
 		int i = 1;
 		while(i <= max) {
-			printMultiplesFor(i, i); // This makes it 1x1, 2x2 etc...
+			printMultiplesFor(i, i); // This makes it 1x1, 2x1 2x2, 3x1, 3x2 etc...
 			
 			i = i + 1;
 			
