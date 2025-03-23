@@ -26,7 +26,7 @@ public class Power {
 	
 	public static void main(String[] args) {
 		
-		double ans = power(2, 2);
+		double ans = power(2, -2);
 		System.out.println(ans);
 		
 	}
