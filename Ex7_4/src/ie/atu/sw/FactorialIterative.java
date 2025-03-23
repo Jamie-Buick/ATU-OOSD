@@ -10,23 +10,20 @@ public class FactorialIterative {
 
 		for(int i = n-1; i > 0 ; i--)
 		{
-
 			result = prevAns * i;
 			prevAns = result;
 			
-			System.out.print(i + "     ");
-			System.out.println(prevAns);
-			
+			//System.out.print(i + "     ");
+			//System.out.println(prevAns);	
 		}
 		
-		
-		System.out.println("Final - " + prevAns);
 		return result;
 	}
 	
 	
 	
 	public static void main(String[] args) {
-		factorial(5);
+		double result = factorial(5);
+		System.out.println("Final  Result - " + result);
 	}
 }
