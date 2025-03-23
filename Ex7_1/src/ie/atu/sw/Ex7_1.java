@@ -1,6 +1,6 @@
 package ie.atu.sw;
 
-public class Ex7_2 {
+public class Ex7_1 {
 
 	public static void main(String[] args) {
 		loop(10);
