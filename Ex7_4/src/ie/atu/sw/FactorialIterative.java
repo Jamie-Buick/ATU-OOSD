@@ -23,7 +23,7 @@ public class FactorialIterative {
 	
 	
 	public static void main(String[] args) {
-		double result = factorial(5);
+		double result = factorial(0);
 		System.out.println("Final  Result - " + result);
 	}
 }

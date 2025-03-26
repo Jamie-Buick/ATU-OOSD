@@ -6,12 +6,28 @@ public class AreaCalculator {
 	
 	//Instance variables
 	private Scanner scanner;
+	private boolean keepRunning = true;
 	
 	public AreaCalculator() {
 		scanner = new Scanner(System.in);
 		
-		init();
-		processInput();
+		// Use do or while loop when we do not know how many iterations are possible to happen, otherwise use a for loop 
+		// The do loop will always run atleast once
+		do {
+			init();
+			processInput();
+		} while (keepRunning);
+		
+		
+		/*
+		 while(keepRunning) 
+		{
+			init();
+			processInput();
+		}
+		*/
+		
+		
 	}
 	
 	public void calcAreaCircle() {
@@ -47,7 +63,7 @@ public class AreaCalculator {
 		switch(choice) {
 			case 1 		-> calcAreaCircle();
 			case 2 		-> calcAreaTriangle();
-			case 3 		-> System.exit(0);
+			case 3 		-> keepRunning = false;   // Get the loop to exit
 			default 	-> System.out.println("Please enter a valid selection");
 		}
 		
