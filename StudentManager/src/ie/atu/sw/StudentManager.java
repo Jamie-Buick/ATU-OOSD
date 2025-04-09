@@ -16,8 +16,25 @@ public class StudentManager {
 			if (student[i] == null)
 			{
 				student[i] = s;
+				return;
 			}
 		}
+		
+		int index = getExpandedIndex();
+		student[index] = s;
+	}
+	
+	private int getExpandedIndex() {
+		Student[] temp = new Student[student.length * 2];
+		
+	
+		for (int i = 0; i < student.length; i++) {
+			temp[i] = student[i];
+		}
+		
+		int index = student.length;
+		student = temp;
+		return index;
 	}
 	
 	
@@ -67,12 +84,7 @@ public class StudentManager {
 			
 		}
 		
-		
-		
-		
-		
-		
-		return null;
+		return temp;
 	}
 	
 	
