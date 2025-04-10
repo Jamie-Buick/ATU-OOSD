@@ -1,5 +1,8 @@
 package ie.atu.sw;
 
+import java.time.LocalDate;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class StudentManager {
 	private static final int INITIAL_CAPACITY = 10;
 	private Student[] student = null;
@@ -8,6 +11,7 @@ public class StudentManager {
 	
 	public StudentManager() {
 		student = new Student[INITIAL_CAPACITY];
+		init();
 	}
 
 
@@ -100,5 +104,37 @@ public class StudentManager {
 	}
 	
 	
+	private void init() {
+		
+		ThreadLocalRandom rand = ThreadLocalRandom.current();
+		
+		String[] fnames = {"Joe", "Jane", "Anne", "Pat"};
+		String[] surnames = {"Smith", "Murphy", "Buick", "Burke"};
+		Course[] courses = Course.values();
+		
+		
+		int max = 100000;
+		long start = System.currentTimeMillis();
+		
+		for(int i = 0; i < max; i++) {
+			Student rs = new Student("G00" + i, 
+					fnames[rand.nextInt(0, fnames.length)],
+					surnames[rand.nextInt(0, surnames.length)],
+					LocalDate.now(),
+					new Address("Galway"), 
+					courses[rand.nextInt(0, courses.length)]
+				);
+			add(rs);
+
+		}
+		System.out.println("Time: " + (System.currentTimeMillis() - start));
+	}
+	
+	
 	
 }
+
+
+
+
+
