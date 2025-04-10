@@ -1,10 +1,12 @@
 package ie.atu.sw;
 
 import static java.lang.System.out;
+
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Menu {
-
+	private StudentManager sm = new StudentManager();
 	private Scanner s;
 	private boolean keepRunning = true;
 	public Menu() {
@@ -35,29 +37,71 @@ public class Menu {
 	
 	
 	
-	
-	
 	private void add() {
 		out.println("[INFO] Add a Student");
 		
+		out.println("Enter an Student ID> ");
+		String sid = s.next();
+		
+		out.println("Enter an Student Firstname> ");
+		String fname = s.next();
+		
+		out.println("Enter an Student Surname> ");
+		String surname = s.next();
+		
+		Student tmp = new Student(sid, fname, surname, LocalDate.now(), 
+				new Address("Louth"), Course.SOFT_DEV);
+		sm.add(tmp);
+		
+	
 	}
 	
 	private void delete() {
-		out.println("[INFO] Delete a Student");
+		out.println("Enter an Student ID> ");
+		String sid = s.next();
+		
+		if (sm.delete(sid)) {
+			out.println("[INFO] Student " + sid + " Deleted!");
+		}
+		else
+		{
+			out.println("[INFO] Cannot find student " + sid);
+		}
 	}
+	
 	
 	private void findByID() {
 		out.println("[INFO] Find Student by ID");
+		out.println("Enter an Student ID> ");
+		String sid = s.next();
+		Student student = sm.getStudentByID(sid);
+		
+		if (student != null)
+		{
+			out.println(student);
+		}
+		else
+		{
+			out.println("[INFO] Cannot find student " + sid);
+		}
 
 	}
 	
 	private void findStudentsByFirstname() {
 		out.println("[INFO] Find Students by Firstname");
-
+		out.println("Enter a student firstname> ");
+		String fName = s.next();
+		
+		Student[] results = sm.getStudentsByFirstname(fName);
+		
+		for (Student student : results) 
+		{
+			out.println(student);
+		}
 	}
 	
 	private void getTotal() {
-		out.println("[INFO] Get Total Students");
+		out.println("Total Students: " + sm.size());
 
 	}
 	

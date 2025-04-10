@@ -40,7 +40,7 @@ public class StudentManager {
 	
 	public boolean delete(String sid) {
 		for (int i = 0; i < student.length; i++) {
-			if (student[i] != null && student[i].firstname().equals(sid))
+			if (student[i] != null && student[i].sid().equals(sid))
 			{
 				student[i] = null;
 				return true;
@@ -52,7 +52,7 @@ public class StudentManager {
 	
 	public Student getStudentByID(String sid) {
 		for (int i = 0; i < student.length; i++) {
-			if (student[i] != null && student[i].firstname().equals(sid))
+			if (student[i] != null && student[i].sid().equals(sid))
 			{
 				return student[i];
 			}
