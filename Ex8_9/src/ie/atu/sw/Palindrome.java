@@ -49,6 +49,35 @@ public class Palindrome {
 		return isPal;
 	}
 	
+	public static boolean isPalindromeItr(String s) {
+		
+		int i = 0;
+		int j = s.length()-1;
+		boolean isPal = true;
+		
+		while(i < j) 
+		{
+			if(s.charAt(i) == s.charAt(j)) 
+			{
+				isPal = true;
+				i++;
+				j--;
+			}
+			else 
+			{
+				isPal = false;
+				break;
+			}
+	
+		}
+		
+	
+		return isPal;
+	}
+	
+	
+	
+	
 	
 	
 	
@@ -68,5 +97,8 @@ public class Palindrome {
 	
 		boolean isPal = isPalindrome(s);
 		System.out.println(isPal);
+		
+		boolean isPalItr = isPalindromeItr(s);
+		System.out.println("ans: " + isPalItr);
 	}
 }
