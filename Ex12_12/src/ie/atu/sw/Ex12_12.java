@@ -5,28 +5,30 @@ public class Ex12_12 {
 	public static boolean isDoubloon(String s) {
 		
 		boolean isDoubloon = true;
-		int counter = 0;
-		for(int i = 0; i <= s.length()-1; i++)
+		
+		
+		
+		for(int i = 0; i < s.length(); i++)
 		{
-			char current = s.charAt(i);
-			
-			for(int j = i+1; j < s.length()-1; j++) 
+			//char current = s.charAt(i);
+			int counter = 0;
+			for(int j = 0; j < s.length(); j++) 
 			{
-				if (current == s.charAt(j))
+				if (s.charAt(i) == s.charAt(j))
 				{
-					isDoubloon = true;
-					counter++;
-					break;
-				}
-				// i think i need to not check the character again once I come accross it 
 				
-				else 
-				{
-					isDoubloon = false;	
+					counter++;
 				}
 			}
-			System.out.println(counter);
-		}
+				
+				if(counter != 2) 
+				{
+					isDoubloon = false;
+					break;
+				}
+			}
+			//System.out.println(isDoubloon);
+		
 		
 		
 		return isDoubloon;
@@ -35,7 +37,7 @@ public class Ex12_12 {
 	
 	public static void main(String[] args) {
 		
-		String s = "noon";
+		String s = "appearer";
 		boolean ans = isDoubloon(s);
 		System.out.println(ans);
 	}
