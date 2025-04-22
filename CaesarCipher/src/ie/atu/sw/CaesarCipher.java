@@ -2,37 +2,47 @@ package ie.atu.sw;
 
 public class CaesarCipher {
 
-	
 	private int key = 0;
 
-	
 	public CaesarCipher(int key) {
 		this.key = key;
 	}
 	
-	public String encrypt(String plainText) {
-		String enc = "";
+	private String transform(String s, boolean encrypt) {
 		
-		for (int i = 0; i < plainText.length(); i++) 
+		StringBuilder sb = new StringBuilder("");
+		
+	
+		for (int i = 0; i < s.length(); i++) 
 		{
-			char ch = (char) (plainText.codePointAt(i) + key);
-			enc = enc + ch;
+			if(encrypt) 
+			{
+				char ch = (char) (s.codePointAt(i) + key);
+				sb.append(ch); 
+			}
+			else
+			{
+				char ch = (char) (s.codePointAt(i) - key);
+				sb.append(ch); 
+			}
+			
+			
 		}
 		
-		return enc;
+		
+		return sb.toString();
+	}
+	
+	public String encrypt(String plainText) {
+		boolean encrypt = true;
+		
+		return transform(plainText, encrypt);
 	}
 	
 	public String decrypt(String cipherText) {
-		
-		String dec = "";
-		
-		for (int i = 0; i < cipherText.length(); i++) 
-		{
-			char ch = (char) (cipherText.codePointAt(i) - key);
-			dec = dec + ch;
-		}
-			
-		return dec;
+		boolean encrypt = false;
+	
+		return transform(cipherText, encrypt);
 	}
 	
 	
