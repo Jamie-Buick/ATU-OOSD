@@ -74,7 +74,8 @@ public class Vigenere {
 		if (encrypt)
 		{
 			for (int i = 0; i < s.length(); i++) {
-				sb.append(getEncryptedCharacter(key[i], s.charAt(i)));
+				sb.append(getEncryptedCharacter(key[i % key.length], s.charAt(i)));
+				
 			}
 			
 			return sb.toString();
@@ -82,9 +83,9 @@ public class Vigenere {
 		else
 		{
 			for (int i = 0; i < s.length(); i++) {
-				sb.append(getDecryptedCharacter(key[i], s.charAt(i)));
+				sb.append(getDecryptedCharacter(key[i % key.length], s.charAt(i)));
 			}
-			
+		
 			return sb.toString();
 		}
 	}
