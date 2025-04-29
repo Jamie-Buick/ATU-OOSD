@@ -16,13 +16,7 @@ public class Vigenere {
 	
 	
 	public String encrypt(String plainText) {
-		StringBuilder sb = new StringBuilder();
-		
-		for (int i = 0; i < plainText.length(); i++) {
-			sb.append(getEncryptedCharacter(key[i], plainText.charAt(i)));
-		}
-		
-		return sb.toString();
+		return transform(true, plainText);
 	}
 	
 	
@@ -41,20 +35,15 @@ public class Vigenere {
 				}
 			}
 		}
+		
 		return plain;
 	}
 	
 	
-	
+
 	
 	public String decrypt(String cipherText) {
-		StringBuilder sb = new StringBuilder();
-		
-		for (int i = 0; i < cipherText.length(); i++) {
-			sb.append(getDecryptedCharacter(key[i], cipherText.charAt(i)));
-		}
-		
-		return sb.toString();
+		return transform(false, cipherText);
 	}
 	
 	
@@ -74,9 +63,30 @@ public class Vigenere {
 			}
 		}
 		
-		
-		
 		return cipher;
+	}
+	
+	
+	
+	private String transform(boolean encrypt, String s) {
+		StringBuilder sb = new StringBuilder();
+		
+		if (encrypt)
+		{
+			for (int i = 0; i < s.length(); i++) {
+				sb.append(getEncryptedCharacter(key[i], s.charAt(i)));
+			}
+			
+			return sb.toString();
+		}
+		else
+		{
+			for (int i = 0; i < s.length(); i++) {
+				sb.append(getDecryptedCharacter(key[i], s.charAt(i)));
+			}
+			
+			return sb.toString();
+		}
 	}
 	
 	
